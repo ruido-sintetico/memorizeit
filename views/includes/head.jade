@@ -1,0 +1,26 @@
+head
+    block title
+    meta(name="author", content="Ivan A. Semenov")
+    meta(name="description", content=head.meta.description)
+    meta(name="keywords", content=head.meta.keywords)
+    block metarobots
+    meta(charset="UTF-8")
+    meta(http-equiv="Expires", content="Wed, 10 Sep 2015 00:00:00 GMT")
+    meta(http-equiv="Set-Cookie", content="lang=#{lang}")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+    script(src="/scripts/underscore.js")
+    script(src="/scripts/zepto.js")
+    script(src="/scripts/backbone.js")
+    script(src="/scripts/translate/#{lang}.js")
+    script(src="/scripts/apperror.js")
+    script(src="/scripts/form.js")
+    script(src="/scripts/cookie.js")
+    script(src="/scripts/basic.js")
+    script(src="/scripts/memorizeit-clientapp.js")
+    
+    block scripts
+    
+    link(rel="stylesheet", href="/styles/normalize.css")
+    link(rel="stylesheet", href="/styles/skeleton.css")
+    link(rel="stylesheet", href="/styles/styles.css")
+    block styles

@@ -1,0 +1,20 @@
+doctype html
+html(lang=lang)
+	include ./includes/head.jade
+	body
+		.container.first
+			.row
+				include ./includes/header.jade
+			nav.row
+				include ./includes/nav.jade
+		.container.middle
+			#main-wrapper.row
+				include ./includes/right.jade
+				#content-wrapper.nine.columns
+					include ./includes/highlighted.jade
+					include ./includes/content.jade
+		.container.last
+			.row
+				include ./includes/footer.jade
+			.row
+				include ./includes/underground.jade

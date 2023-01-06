@@ -1,0 +1,45 @@
+<!--
+<!DOCTYPE>
+<html>
+<head>
+	<title>Memorizeit! - contacts</title>
+	<meta charset='UTF-8'>
+	<script src='scripts/cookie.js'></script>
+	<script src='scripts/zepto.js'></script>
+	<style>
+	</style>
+</head>
+<body style='width: 400px; height: 500px; margin-left: auto; margin-right: auto'>
+	<div><a href='/index'>Главная.</a></div>
+	<script defer='defer'>
+		var lang = Cookie.getCookie("lang");
+		if (lang == "ru") createRuPage();
+		if (lang == "en") createEnPage();
+		
+		function createRuPage() {
+
+			$("body").append("<h1>О сайте</h1>")
+			$("body").append("<p>Назначение сайта Запоминай! - помочь людям изучающим иностранные языки.</p>" +
+			"<p>Сайт является open source проектом и разрабатывается группой энтузиастов. Будем рады, если к нам" +
+			" присоединятся люди желающие улучшить проект. Дизайнеры, лингвисты, программисты и просто" +
+			" неравнодушные - присоединяйтесь! Вы можете не быть профессионалом, но если у Вас есть идеи и" +
+			" Вы готовы ими поделиться и реализавать их - добро пожаловать!</p>")
+			$("body").append("<p>Сейчас полностью доступна только русская версия сайта. Ведуться работы по переводу" +
+			" на английский язык. В перспективе возможно создание версий для других языков.</p>")
+			$("body").append("<p>Проект располагается на <a href='https://github.com/ruido-sintetico/memorizeit'>" +
+			"github.com/ruido-sintetico/memorizeit</a>.</p>" +
+			"<p>Посетите страницу <a href='/contact.html'>\"Контакты\"</a>, чтобы узнать как связаться с нами.</p>")
+
+
+		}
+		
+		function cteateEnPage() {
+
+			$("body").append("About")
+			$("body").append("<div></div>")
+
+		}
+	</script>
+</body>
+</html>
+-->

@@ -1,0 +1,35 @@
+<!--
+<!DOCTYPE>
+<html>
+<head>
+	<title>Memorizeit! - contacts</title>
+	<meta charset='UTF-8'>
+	<script src='scripts/cookie.js'></script>
+	<script src='scripts/zepto.js'></script>
+	<style>
+	</style>
+</head>
+<body style='width: 400px; height: 500px; margin-left: auto; margin-right: auto'>
+	<div><a href='/index'>Главная.</a></div>
+	<script defer='defer'>
+		var lang = Cookie.getCookie("lang");
+		if (lang == "ru") createRuPage();
+		if (lang == "en") createEnPage();
+		
+		function createRuPage() {
+
+			$("body").append("<h1>Контакты</h1>")
+			$("body").append("<div>Вы можете связаться с нами по адресу <a href='mailto://memorizeit.app@gmail.com'>memorizeit.app@gmail.com</a></div>")
+
+		}
+		
+		function cteateEnPage() {
+
+			$("body").append("Contacts")
+			$("body").append("<div>You can contact us by <a href='mailto://memorizeit.app@gmail.com'>memorizeit.app@gmail.com</a></div>")
+
+		}
+	</script>
+</body>
+</html>
+-->

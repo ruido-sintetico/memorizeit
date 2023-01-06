@@ -1,0 +1,17 @@
+aside#right-sidebar.three.columns.u-pull-right
+    if user.authorized
+        div#personal
+            p#greeting #{user.greeting}, #{user.name}!
+                p
+                    a(href="/auth/logout", id = "logout") Log out
+            ul#personal-menu
+                li.personal-menu-items
+                    a#dictionaries()= rAside.dictionaries
+                li.personal-menu-items
+                    a#words()= rAside.words
+                li.personal-menu-items 
+                    a#test()= rAside.test
+                li.personal-menu-items
+                    a#learn()= rAside.learn
+    else
+        div#enter-form.three.column

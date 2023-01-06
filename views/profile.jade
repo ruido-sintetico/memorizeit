@@ -1,0 +1,49 @@
+extends ./layout.jade
+
+block title
+    title #{head.title} | #{head.siteName} - #{head.slogan}
+
+block metarobots
+    meta(name="robots", content="nofollow,noindex")
+
+block styles
+    link(rel="stylesheet", href="/styles/profile-styles.css" )
+block scripts
+    script(src="/scripts/profile.js")
+
+block content
+    if user.authorized
+        h3= content.header
+        div#account.profile
+            div#image-ctrl
+                img(src="/public/images/#{user.id}" alt="avatar")
+                input#add-image.button-primary(type="button" value="#{profile.addImage}")
+            div#account-data
+                div= user.name
+                div.email= user.email
+                input#change-pass.button-primary(type="button" value="#{profile.changePass}")
+        div.archive.profile
+            h5.headers.arch= profile.archive
+            div.archives
+                h6.subheaders.arch-dicts= profile.dicts
+                div.archive-dicts
+            div.archives
+                h6.subheaders.arch-words= profile.words
+                div.archive-words
+        div.statistic.profile
+            h5.headers.stat= profile.statistic
+            div.statistics
+                h6.subheaders.stat-dicts= profile.dicts
+                div.statistic-dicts
+            div.statistics
+                h6.subheaders.stat-words= profile.words
+                div.statistic-words
+        div.add-dicts.profile
+            form(action="/user/addpredict" method="POST" id="predicts-form")
+                h5= profile.addDicts
+                select.select-predicts
+                input#submit-choice.button-primary(type="submit" value="#{profile.choose}")
+        
+    else
+        p #{profile.needAuth}
+

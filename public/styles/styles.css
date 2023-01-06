@@ -1,0 +1,89 @@
+a	{
+	text-decoration: none;
+}
+
+li	{
+	list-style-type: none;
+	display: inline-block;
+	margin-left: 2rem;
+}
+
+.container	{
+	margin-bottom: 4rem;
+	background-color: #4B4010;
+	color: #F2EAC7;
+}
+
+.container.last	{
+	margin-bottom: 0;
+}
+
+.container.middle	{
+	background-color: #F2EAC7;
+	color: #4B4010;
+	border-radius: 15px;
+}
+
+#copyright	{
+	font-size: 1.3rem;
+}
+
+#auth input,
+#auth label,
+#reg input,
+#reg label,
+#rem input,
+#rem label	{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+a#remember,
+a#registration,
+a#enter,
+a#logout,
+p#greeting	{
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+nav div,
+.icons,
+#name	{
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+nav div a	{
+	font-weight: 600;
+}
+
+#stat-page	{
+	margin: 1rem;
+}
+
+#highlighted p.message	{
+	border: 1px solid green;
+	border-radius: 4px;
+	color: green;
+	margin: 3rem;
+	padding: 1rem;}
+
+#highlighted p.warning	{
+	border: 1px solid orange;
+	border-radius: 4px;
+	color: orange;
+	margin: 3rem;
+	padding: 1rem;}
+
+#highlighted p.error	{
+	border: 1px solid red;
+	border-radius: 4px;
+	color: red;
+	margin: 3rem;
+	padding: 1rem;}
