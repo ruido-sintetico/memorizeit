@@ -2,7 +2,6 @@
  * @file This is main server file. There is whole server logic.
  * @author Ivan A.Semenov<ivanse@yandex.ru>
  */
-
 "use strict"
 
 // Dependecies
@@ -43,8 +42,9 @@ server.set("assetsConfig", assetsConfig.get("/location", server.get("env")));
 /**
  *  Set up DB
  */
+
 if (server.get("env") === "production") {
-	let conf = server.get("dbConfig");
+	var conf = server.get("dbConfig");
     server.set("dbAddress", `mongodb://${conf.userName}:${conf.password}@${conf.host}:${conf.port}/${conf.db}`);
 } else {
 	let conf = server.get("dbConfig");
