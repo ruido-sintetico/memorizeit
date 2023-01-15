@@ -1,0 +1,10 @@
+{
+  "name": "memorizeit2",
+  "version": "0.0.0",
+  "description": "It is app that helps remember foreign words",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Ivan A.Semenov",
+  "license": "MIT"
+}
