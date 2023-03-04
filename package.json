@@ -6,5 +6,6 @@
   "scripts": {
   },
   "author": "Ivan A.Semenov",
-  "license": "MIT"
+  "license": "MIT",
+  "type": "module"
 }

@@ -1,10 +1,11 @@
 "use strict"
 
-const argv = require("process").argv;
-const readline = require('node:readline/promises');
-const input = require("node:process").stdin;
-const output = require("node:process").stdout;
-const fs = require("fs");
+import {argv} from 'node:process';
+import readline from 'node:readline';
+import input from 'node:process';
+import output from 'node:process';
+import {print} from './libs/print/print.js'
+import dictionary from './libs/storage_strategies/json_strategy.js';
 
 switch (argv[2]) {
     case "learn":
@@ -63,43 +64,19 @@ function words(argv) {
 
     switch (argv[3]) {
         case "--add":
-            addWord(argv[4], argv[5]);
+            dictionary.addWord(argv[4], argv[5]);
             break;
         case "--remove":
-            removeWord(argv[4], argv[5]);
+            dictionary.removeWord(argv[4], argv[5]);
             break;
         case "--change":
-            changeWord(argv[4], argv[5]);
+            dictionary.changeWord(argv[4], argv[5]);
             break;
         default:
             console.log("W_Unknown command. Try enter --help.")            
     }
 
 }
-
-// WORDS
-
-function addWord(word, translate) {
-    const dictionary = require(__dirname + "/storage/common.json");
-    dictionary[word] = translate;
-    fs.writeFileSync(__dirname + '/storage/common.json', JSON.stringify(dictionary));
-};
-
-function removeWord(word) {
-    console.log("remove word %s", word);
-    const dictionary = require(__dirname + "/storage/common.json");
-    delete dictionary[word];
-    fs.writeFileSync(__dirname + '/storage/common.json', JSON.stringify(dictionary));
-};
-
-function changeWord(word, translate) {
-    console.log();
-    const dictionary = require(__dirname + "/storage/common.json");
-    console.log(dictionary);
-    dictionary[word] = translate;
-    fs.writeFileSync(__dirname + '/storage/common.json', JSON.stringify(dictionary));
-
-};
 
 // HELP
 
@@ -109,8 +86,7 @@ function help(chapter = "") {
 
 // LEARN
 
-function learning(order = "stright") {
-    const dictionary = require(__dirname + "/storage/common.json");
+function learning(order = "stright") { 
     switch (order) {
         case "stright":
             for(var a in dictionary) {
