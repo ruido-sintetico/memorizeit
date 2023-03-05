@@ -1,9 +1,16 @@
+/*
+  This file contains methods for words management in dictionary
+*/
 import {readFile} from 'fs/promises';
 import fs from 'node:fs';
+
+//  Create the dictionary 
 
 const dictionary = {};
 
 dictionary.list = undefined;
+
+// Add words into a dictionary
 
 dictionary.addWord = async function addWord(word, translate) {
   dictionary.list = JSON.parse(
@@ -15,6 +22,8 @@ dictionary.addWord = async function addWord(word, translate) {
   fs.writeFileSync('./storage/common.json', JSON.stringify(dictionary.list));
 };
 
+// Remove words from dictionary
+
 dictionary.removeWord = async function removeWord(word) {
   dictionary.list = JSON.parse(
     await readFile(
@@ -24,6 +33,8 @@ dictionary.removeWord = async function removeWord(word) {
   delete dictionary.list[word];
   fs.writeFileSync('./storage/common.json', JSON.stringify(dictionary.list));
 };
+
+//  Change word in dictionary
 
 dictionary.changeWord = async function changeWord(word, translate) {
   dictionary.list = JSON.parse(
@@ -36,4 +47,5 @@ dictionary.changeWord = async function changeWord(word, translate) {
 
 };
 
+//  Exports dictionary and methods in sample object
 export default dictionary;

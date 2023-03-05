@@ -1,0 +1,6 @@
+Using: 
+    To start testing process enter:
+    node index.js test [--stright] [--back] [--mixed]
+    --stright - Term in the pairs term-value will be shown
+    --back - Value in the pairs term-value will be shown
+    --mixed - Pairs will be shown in the mixed order

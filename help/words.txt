@@ -1,0 +1,6 @@
+Using: 
+    To start testing process enter:
+    node index.js words [add term value] [remove term] [change term value]
+        add - add a pair {term}-{value} into the dictionary
+        remove - remove pair {term}-{value} from dictionary by term
+        change - change value of the term in the dictionary

@@ -1,0 +1,6 @@
+Using: 
+    To start learning process enter:
+    node index.js learn [--stright] [--back] [--mixed]
+    --stright - Pairs will be shown in the following order {term}-{value}
+    --back - Pairs will be shown in the following order {value}-{term}
+    --mixed - Pairs will be shown in the mixed order

@@ -1,0 +1,13 @@
+ Using: node index.js [test] [learn] [words] [help]
+
+To get testing help enter:
+    node index.js help test
+
+To get learning help enter:
+    node index.js help learn
+
+To get action with words help enter:
+    node index.js help words
+
+To get this help enter:
+    node index.js help

@@ -6,7 +6,11 @@ import input from 'node:process';
 import output from 'node:process';
 import {print} from './libs/print/print.js'
 import dictionary from './libs/storage_strategies/json_strategy.js';
+import fs from 'node:fs';
 
+let rootDirectory = process.cwd();
+
+// First level argument
 switch (argv[2]) {
     case "learn":
         learn(argv);
@@ -24,6 +28,7 @@ switch (argv[2]) {
         console.log("O_Unknown command. Try enter --help.");
 }
 
+// Second level arguments
 function learn(argv) {
 
     switch (argv[3]) {
@@ -60,17 +65,22 @@ function test(argv) {
 
 }
 
+// WORDS
+
 function words(argv) {
 
+    let term = argv[4];
+    let value = argv[5];
+
     switch (argv[3]) {
-        case "--add":
-            dictionary.addWord(argv[4], argv[5]);
+        case "add":
+            dictionary.addWord(term, value);
             break;
-        case "--remove":
-            dictionary.removeWord(argv[4], argv[5]);
+        case "remove":
+            dictionary.removeWord(term);
             break;
-        case "--change":
-            dictionary.changeWord(argv[4], argv[5]);
+        case "change":
+            dictionary.changeWord(term, value);
             break;
         default:
             console.log("W_Unknown command. Try enter --help.")            
@@ -81,7 +91,17 @@ function words(argv) {
 // HELP
 
 function help(chapter = "") {
-    console.log("chapter %s", chapter)
+    if (chapter == "") chapter = "main";
+    let helpText = undefined;
+    try {
+        helpText = fs.readFileSync("./help/" + chapter + ".txt",{encoding: "utf-8"});
+    }
+    catch (e) {
+        throw e;
+    //     console.log("There is no chapter %s. Try enter 'node index.js help'", chapter);
+    //     return;
+    }
+    print(helpText.toString("utf-8"));
 }
 
 // LEARN
